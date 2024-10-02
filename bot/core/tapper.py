@@ -534,12 +534,15 @@ class Tapper:
                         if condition:
                             await self.start_hunt(bird_data['id'], http_client)
 
+                print("AUTO_UPGRADE_STORAGE", settings.AUTO_UPGRADE_STORAGE)
                 if settings.AUTO_UPGRADE_STORAGE:
                     await self.upgrade_storage(http_client)
                     await asyncio.sleep(1)
+                print("AUTO_UPGRADE_MINING", settings.AUTO_UPGRADE_MINING)
                 if settings.AUTO_UPGRADE_MINING:
                     await self.upgrade_mining(http_client)
                     await asyncio.sleep(1)
+                print("AUTO_UPGRADE_HOLY", settings.AUTO_UPGRADE_HOLY)
                 if settings.AUTO_UPGRADE_HOLY:
                     await self.upgrade_holy(http_client)
                     await asyncio.sleep(1)
